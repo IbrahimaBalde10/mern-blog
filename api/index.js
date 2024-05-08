@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv'; 
+import userRouter from '../api/routes/user.route.js';
 // Cluster0
 dotenv.config();
 
@@ -15,4 +16,6 @@ const app = express();
 
 app.listen(3000, ()=>{
     console.log('Le serveur est demaré au port 3000!');
-})
+});
+
+app.use('/api/user', userRouter);
